@@ -1,0 +1,71 @@
+# Build artifacts
+build/
+install/
+log/
+firmware_ws/
+*.o
+*.so
+*.a
+*.pyc
+__pycache__/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Colcon
+.colcon_install_layout
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.pid
+*.seed
+
+# UART named pipes (created at runtime)
+/tmp/*_uart
+
+# Python
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+*.egg
+
+# Compiled binaries
+*.exe
+*.out
+*.app
+
+# Dependencies (if cloned)
+src/uros/
+src/ros2.repos
+
+# Test artifacts
+test_results/
+coverage/
+
+# Environment
+.env
+.venv
+venv/
+
+# OS
+Thumbs.db
+.DS_Store

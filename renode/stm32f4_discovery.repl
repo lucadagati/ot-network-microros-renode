@@ -1,0 +1,9 @@
+/*
+ * STM32F4 Discovery Board Description for Renode
+ * Based on Renode standard platform: platforms/boards/stm32f4_discovery.repl
+ * Reference: https://renode.readthedocs.io/en/latest/introduction/demo.html
+ */
+
+# Use the standard STM32F4 Discovery platform from Renode
+# This file is a placeholder - we'll use the standard Renode platform directly
+

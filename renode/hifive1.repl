@@ -1,0 +1,33 @@
+/*
+ * SiFive HiFive1 RISC-V Board Description for Renode
+ * This file describes the hardware platform for emulation
+ */
+
+hifive1: Machine @ sysbus
+    // CPU Configuration
+    cpu: CPU.RiscV32 @ sysbus
+        cpuType: "rv32imac"
+        timeProvider: timeProvider
+        
+    // Memory Configuration
+    mem: Memory.MemoryBlock @ sysbus 0x80000000
+        size: 0x20000000  // 512 MB
+        
+    // UART for serial communication
+    uart0: UART.SiFive_UART @ sysbus 0x10013000
+        -> uart0@0x10013000
+        
+    // Timer
+    timer: Timers.SiFive_CLINT @ sysbus 0x2000000
+        frequency: 100000000
+        [0, 1] -> cpu@[3, 7]
+        
+    // PLIC (Platform-Level Interrupt Controller)
+    plic: IRQControllers.SiFive_PLIC @ sysbus 0xC000000
+        -> cpu@11
+        [0-1] -> uart0@[0-1]
+        
+    // Clock
+    timeProvider: Time.ClockProvider
+        Frequency: 100000000
+

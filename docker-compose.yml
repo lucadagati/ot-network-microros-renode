@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  microros-renode:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ot-network-simulator
+    volumes:
+      - .:/workspace
+      - /tmp:/tmp  # For UART named pipes
+    network_mode: host  # Required for ROS 2 DDS communication
+    stdin_open: true
+    tty: true
+    # Removed DISPLAY and GUI-related env vars for headless/SSH operation
+    # Renode will run in console mode
+    command: /bin/bash
+
